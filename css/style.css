@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(120deg, #041429, #000c00, #041429, #002200);
-    background-size: 400% 400%; /* для анимации движения градиента */
+    background-size: 400% 400%;
     color: #fff;
     animation: matrixGradient 15s ease infinite;
 }
@@ -71,27 +71,6 @@ ul {
     margin: 3px;
     border-radius: 6px;
     font-size: 13px;
-}
-
-.portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.portfolio-item a {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.portfolio-item a:hover {
-    background-color: #007bff;
-    color: #fff;
 }
 
 ul.experience {
@@ -187,7 +166,7 @@ ul.experience li strong + br {
 .slider button.prev,
 .slider button.next {
     position: absolute;
-    top: 50%;
+    bottom: -25px;
     transform: translateY(-50%);
     background-color: rgba(0,0,0,0.5);
     color: #fff;
@@ -198,8 +177,8 @@ ul.experience li strong + br {
     border-radius: 4px;
     z-index: 10;
 }
-.slider button.prev { left: 10px; }
-.slider button.next { right: 10px; }
+.slider button.prev { left: 0; }
+.slider button.next { right: 0; }
 .slider button:hover { background-color: rgba(0,0,0,0.8); }
 
 /* Інформація про резюме */
@@ -362,4 +341,128 @@ ul.experience li strong + br {
 
 .resume-footer strong {
     color: #ff7b02;
+}
+
+
+/* Контейнер слайдера проектов */
+.portfolio-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Список проектов */
+.portfolio-list {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    gap: 0;
+}
+
+/* Каждый проект как слайд */
+.portfolio-item-new {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    display: flex;
+    gap: 30px;
+}
+
+/* Слайдер картинок внутри проекта */
+.portfolio-list .slider {
+    width: 100%;
+    max-width: 420px;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 5px solid #ff7b02;
+}
+
+
+.portfolio-list .slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+.portfolio-list .slider img.active { display: block; }
+
+/* Информация о проекте */
+.portfolio-info {
+    max-width: 450px;
+}
+.portfolio-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.portfolio-info p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 15px;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #0351b0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+.btn:hover { background: #023a80; }
+
+/* Стиль кнопок для портфолио */
+.portfolio-prev,
+.portfolio-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: #1a1a1a; /* цвет стрелки */
+    border: 2px solid #ff7b02;
+    padding: 10px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    font-size: 18px;
+}
+
+.portfolio-prev:hover,
+.portfolio-next:hover {
+    background: #1a1a1a;
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+.portfolio-prev { left: 10px; }
+.portfolio-next { right: 10px; }
+
+/* 📱 Адаптив */
+@media (max-width: 768px) {
+    .portfolio-item-new { flex-direction: column; }
+    .portfolio-info { max-width: 100%; }
+    .portfolio-prev, .portfolio-next { padding: 6px 10px; }
+}
+
+.btn.disabled-link {
+    display: inline-block;
+    background-color: #ccc;
+    color: #666;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: not-allowed;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn.disabled-link:hover {
+    background-color: #bbb;
+    color: #444;
 }

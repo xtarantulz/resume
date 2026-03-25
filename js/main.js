@@ -9,7 +9,9 @@ $(document).ready(function() {
             $('#content-area').append('<div class="block"></div>');
             $(`.block`).last().load(`blocks/${lang}/${file}`, function() {
                 // контент полностью загрузился
+                initSlider() // слайдеры обычные
                 initAccordion();  // акордеон для h2
+                initPortfolioSlider(); // портфолио слайдер
             });
         });
     }
