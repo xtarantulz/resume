@@ -422,7 +422,7 @@ ul.experience li strong + br {
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
-    color: #1a1a1a; /* цвет стрелки */
+    color: white;
     border: 2px solid #ff7b02;
     padding: 10px 16px;
     border-radius: 50%;
@@ -436,7 +436,7 @@ ul.experience li strong + br {
 .portfolio-prev:hover,
 .portfolio-next:hover {
     background: #1a1a1a;
-    color: #fff;
+    color: #ff7b02;
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
@@ -465,4 +465,107 @@ ul.experience li strong + br {
 .btn.disabled-link:hover {
     background-color: #bbb;
     color: #444;
+}
+
+.portfolio-info .year {
+    display: block;
+    font-size: 14px;
+    color: #888;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+
+/* ===== Справка про невідображені проєкти ===== */
+.portfolio-note {
+    background-color: #f9f9f9;       /* світло-сірий фон */
+    border-left: 4px solid #0073e6;  /* синя лінія зліва */
+    padding: 16px 20px;              /* внутрішні відступи */
+    margin-bottom: 30px;             /* відступ знизу до проектів */
+    border-radius: 6px;              /* закруглені кути */
+    font-family: 'Inter', sans-serif;
+}
+
+.portfolio-note h3 {
+    margin-top: 0;
+    color: #0073e6;
+    font-size: 20px;
+}
+
+.portfolio-note p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.portfolio-note ul {
+    margin: 10px 0 10px 20px;
+    padding: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.portfolio-note ul li {
+    margin-bottom: 6px;
+}
+
+/* ===== Справка про невідображені проєкти ===== */
+.portfolio-note {
+    background-color: #f4f1ee;       /* теплий світло-бежевий фон */
+    border-left: 4px solid #c66d1e;  /* коричнево-помаранчева лінія зліва */
+    padding: 16px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+.portfolio-note h3 {
+    margin-top: 0;
+    color: #c66d1e;                  /* колір заголовку під колір лінії */
+    font-size: 20px;
+}
+
+.portfolio-note p,
+.portfolio-note ul li {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.portfolio-note ul {
+    margin: 10px 0 10px 20px;
+    padding: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+/* ===== Справка про показані проєкти (скріншоти) ===== */
+.portfolio-note-visible {
+    background-color: #e6f0fa;       /* більш м’який світло-блакитний фон */
+    border-left: 4px solid #1a73e8;  /* синя лінія зліва */
+    padding: 16px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+.portfolio-note-visible h3 {
+    margin-top: 0;
+    color: #1a73e8;
+    font-size: 20px;
+}
+
+.portfolio-note-visible p,
+.portfolio-note-visible ul li {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.portfolio-note-visible ul {
+    margin: 10px 0 10px 20px;
+    padding: 0;
+    color: #555;
+    font-size: 14px;
 }
