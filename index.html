@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Резюме Батраков Володимир</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/mobile.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+<!-- Canvas для частиц под сайтом -->
+<canvas id="shootCanvas" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0; /* canvas под контентом */
+"></canvas>
+
+<div class="container">
+    <div class="resume-header">
+        <div class="header-top">
+            <!-- Слайдер -->
+            <div class="slider">
+                <img alt="Фото 1" src="img/1.jpg">
+                <img alt="Фото 2" src="img/2.jpg">
+                <img alt="Фото 3" src="img/3.jpg">
+                <img alt="Фото 4" src="img/4.jpg">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+
+            <!-- Ім'я та контакти -->
+            <div class="header-info">
+                <h1>Volodymyr Batrakov</h1>
+                <h2 class="position">Senior PHP / Fullstack Developer</h2>
+                <p class="contact">
+                    Email: <a href="mailto:xxtarantulzz@gmail.com">xxtarantulzz@gmail.com</a> |
+                    Telegram: <a href="https://t.me/xtarantulz">@xtarantulz</a><br>
+                    Phones: +380632700658, +380967226266 |
+                    <a href="https://www.linkedin.com/in/xtarantulz/">LinkedIn</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs-container">
+        <div class="tabs">
+            <div class="tab active" data-lang="uk">Українська</div>
+            <div class="tab" data-lang="ru">Русский</div>
+            <div class="tab" data-lang="en">English</div>
+        </div>
+    </div>
+
+    <div id="content-area"></div>
+</div>
+
+<footer class="resume-footer">
+    <div class="container">
+        <p>&copy; 2026 Volodymyr Batrakov. Resume updated in 2026.</p>
+        <p>Job search status: <strong>Active</strong></p>
+    </div>
+</footer>
+
+<script src="js/background.js"></script>
+<script src="js/main.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/accordion.js"></script>
+
+</body>
+</html>

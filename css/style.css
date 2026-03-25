@@ -1,0 +1,365 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #041429, #000c00, #041429, #002200);
+    background-size: 400% 400%; /* для анимации движения градиента */
+    color: #fff;
+    animation: matrixGradient 15s ease infinite;
+}
+
+/* Анимация плавного перелива градиента */
+@keyframes matrixGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 900px;
+    margin: 15px auto;
+    background: rgba(4, 20, 41, 0.8);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    color: #1a1a1a;
+}
+
+h1,h3 {
+    color: #ff7b02;
+}
+
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+p, li {
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.skills span {
+    display: inline-block;
+    background: #1a73e8; /* насыщенный синий */
+    color: #fff;
+    padding: 3px 8px;
+    margin: 3px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.portfolio-item a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.portfolio-item a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+ul.experience {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.experience > li {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+ul.experience > li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+ul.experience li strong {
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+ul.experience li em {
+    font-style: italic;
+    color: #1a73e8;
+    display: block;
+    margin-bottom: 8px;
+}
+
+ul.experience li ul,
+ul.experience li ol {
+    margin: 8px 0 8px 20px;
+    padding: 0;
+}
+
+ul.experience li ul li,
+ul.experience li ol li {
+    margin-bottom: 5px;
+}
+
+ul.experience li a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+ul.experience li a:hover {
+    text-decoration: underline;
+}
+
+ul.experience li strong + br {
+    margin-bottom: 5px;
+    content: "";
+}
+
+
+/* Шапка з слайдером */
+.header-top {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Слайдер */
+.slider {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #000;
+}
+
+/* Картинки */
+.slider img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    object-fit: cover;
+}
+.slider img.active { display: block; }
+
+/* Кнопки */
+.slider button.prev,
+.slider button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 4px;
+    z-index: 10;
+}
+.slider button.prev { left: 10px; }
+.slider button.next { right: 10px; }
+.slider button:hover { background-color: rgba(0,0,0,0.8); }
+
+/* Інформація про резюме */
+.header-info {
+    flex: 1;
+}
+.header-info h1 { margin: 0 0 10px 0; }
+.header-info .contact { font-size: 14px; line-height: 1.4; }
+
+/* Про мене */
+.about-me-container { margin-top: 20px; }
+.about-text { font-size: 16px; line-height: 1.5; }
+
+/* Добавляем стрелку справа от заголовка */
+.block h2 {
+    position: relative;
+    cursor: pointer;
+    background: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+/* Стрелка с помощью ::after */
+.block h2::after {
+    content: "▼"; /* стрелка вниз */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+    font-size: 14px;
+}
+
+/* Когда блок раскрыт, стрелка поворачивается вверх */
+.block .content {
+    display: none; /* по умолчанию закрыто */
+}
+
+.block .content strong{
+    color: #ff7b02;
+}
+
+.block .content.show + h2::after,
+.block h2.active::after {
+    transform: translateY(-50%) rotate(180deg); /* стрелка вверх */
+}
+
+.block h2:hover {
+    background: #e0e0e0;
+}
+
+/* Блок с прозрачным фоном */
+.block .content {
+    display: none;
+    padding: 10px 15px 15px 15px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05); /* почти прозрачный белый */
+    margin-bottom: 15px;
+    color: #fff; /* текст лучше читается на темном фоне */
+    backdrop-filter: blur(5px); /* эффект стекла */
+    border-radius: 8px; /* скругление, чтобы выглядело аккуратно */
+}
+
+.resume-header {
+    text-align: center;
+    padding: 20px 15px;
+    margin-bottom: 30px;
+    background: rgba(0, 123, 255, 0.2); /* прозрачный синий фон */
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* тень чуть ярче для контраста */
+    backdrop-filter: blur(10px); /* размытие фона под шапкой для эффекта стекла */
+}
+
+.resume-header h1 {
+    font-size: 32px;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.resume-header .contact {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.resume-header .contact a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.resume-header .contact a:hover {
+    color: #ff7b02;
+    text-decoration: none;
+}
+
+/* Позиция под именем */
+.resume-header .position {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffdd57;
+    margin: 5px 0 10px 0;
+    padding-bottom: 20px;
+}
+
+
+/* Контейнер для табів */
+.tabs-container {
+    margin: 30px 0;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Сами таби */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tab {
+    padding: 10px 25px;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    color: black;
+    transition: all 0.3s;
+}
+
+.tab:hover {
+    background: #ff7b02;
+    color: black;
+}
+
+.tab.active {
+    background: #ff7b02;
+    color: black;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+}
+
+
+.resume-footer {
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 30px;
+    background: rgba(0, 123, 255, 0.15); /* прозрачный синий фон */
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px); /* эффект стекла */
+    font-size: 14px;
+}
+
+.resume-footer strong {
+    color: #ff7b02;
+}
