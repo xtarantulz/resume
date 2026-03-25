@@ -517,7 +517,7 @@ ul.experience li strong + br {
     padding: 16px 20px;
     margin-bottom: 30px;
     border-radius: 6px;
-    font-family: 'Inter', sans-serif;
+    margin-top: 10px;
 }
 
 .portfolio-note h3 {
@@ -547,7 +547,6 @@ ul.experience li strong + br {
     padding: 16px 20px;
     margin-bottom: 30px;
     border-radius: 6px;
-    font-family: 'Inter', sans-serif;
 }
 
 .portfolio-note-visible h3 {
