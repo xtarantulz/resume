@@ -568,3 +568,27 @@ ul.experience li strong + br {
     color: #555;
     font-size: 14px;
 }
+
+
+.experience li {
+    margin-bottom: 20px;
+}
+
+.experience .job-block {
+    margin-top: 10px;
+}
+
+.experience .job-block strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.experience .job-block p {
+    margin: 0;
+}
+
+.experience .job-block ul,
+.experience .job-block ol {
+    margin-top: 5px;
+    padding-left: 20px;
+}
