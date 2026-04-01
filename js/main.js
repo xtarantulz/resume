@@ -1,6 +1,18 @@
 $(document).ready(function() {
     initSlider();
 
+    function initTooltips() {
+        tippy('.skills span[title]', {
+            content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+            },
+            animation: 'shift-away',
+            theme: 'dark',
+        });
+    }
+
     // Функция загрузки блоков
     function loadBlocks(lang) {
         let files = ['about.html','skills.html','experience.html','portfolio.html'];
@@ -12,6 +24,7 @@ $(document).ready(function() {
                 initSlider() // слайдеры обычные
                 initAccordion();  // акордеон для h2
                 initPortfolioSlider(); // портфолио слайдер
+                initTooltips() // тултипы
             });
         });
     }

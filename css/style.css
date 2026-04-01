@@ -65,12 +65,22 @@ ul {
 
 .skills span {
     display: inline-block;
-    background: #1a73e8; /* насыщенный синий */
+    background: #1a73e8;
     color: #fff;
     padding: 3px 8px;
     margin: 3px;
     border-radius: 6px;
     font-size: 13px;
+
+    cursor: help;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.skills span:hover {
+    background: #1558b0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 ul.experience {
