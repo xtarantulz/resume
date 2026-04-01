@@ -2,14 +2,19 @@ $(document).ready(function() {
     initSlider();
 
     function initTooltips() {
-        tippy('.skills span[title]', {
+        document.querySelectorAll('.skills span[title]').forEach(el => {
+            el.dataset.tooltip = el.getAttribute('title');
+            el.removeAttribute('title');
+        });
+
+        tippy('.skills span', {
             content(reference) {
-                const title = reference.getAttribute('title');
-                reference.removeAttribute('title');
-                return title;
+                return reference.dataset.tooltip;
             },
             animation: 'shift-away',
             theme: 'dark',
+            delay: [0, 0],
+            duration: [500, 0],
         });
     }
 
