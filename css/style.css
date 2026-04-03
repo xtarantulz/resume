@@ -277,6 +277,8 @@ ul.experience li strong + br {
 .resume-header .contact {
     font-size: 14px;
     line-height: 1.5;
+    border-top: 2px solid white;
+    padding-top: 20px;
 }
 
 .resume-header .contact a {
@@ -602,3 +604,4 @@ ul.experience li strong + br {
     margin-top: 5px;
     padding-left: 20px;
 }
+

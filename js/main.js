@@ -29,7 +29,11 @@ $(document).ready(function() {
                 initSlider() // слайдеры обычные
                 initAccordion();  // акордеон для h2
                 initPortfolioSlider(); // портфолио слайдер
-                initTooltips() // тултипы
+                initTooltips(); // тултипы
+                initMagnifier(".content", {
+                    scale: 2.2,
+                    size: 160
+                });
             });
         });
     }
