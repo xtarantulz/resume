@@ -20,21 +20,50 @@ $(document).ready(function() {
 
     // Функция загрузки блоков
     function loadBlocks(lang) {
-        let files = ['about.html','skills.html','experience.html','portfolio.html'];
-        $('#content-area').empty();
-        files.forEach(file => {
-            $('#content-area').append('<div class="block"></div>');
-            $(`.block`).load(`blocks/${lang}/${file}`, function() {
-                // контент полностью загрузился
-                initSlider() // слайдеры обычные
-                initAccordion();  // акордеон для h2
-                initPortfolioSlider(); // портфолио слайдер
-                initTooltips(); // тултипы
+        let files = [
+            'about.html',
+            'skills.html',
+            'experience.html',
+            'portfolio.html'
+        ];
+
+        const $area = $('#content-area');
+
+        // скрываем чтобы не было "мигания"
+        $area.css({
+            opacity: 0,
+            transition: 'opacity 0.25s ease'
+        });
+
+        // очищаем
+        $area.empty();
+
+        // грузим все блоки параллельно
+        let requests = files.map(file => {
+            return $.get(`blocks/${lang}/${file}`).then(html => {
+                let $block = $('<div class="block"></div>');
+                $block.html(html);
+                $area.append($block);
+            });
+        });
+
+        $.when(...requests).done(function () {
+            initAll();
+
+            requestAnimationFrame(() => {
+                $area.css('opacity', 1);
             });
         });
     }
 
-    // Инициализация: грузим украинский
+    function initAll() {
+        initSlider();
+        initAccordion();
+        initPortfolioSlider();
+        initTooltips();
+    }
+
+    // старт
     loadBlocks('uk');
 
     // Переключение табов

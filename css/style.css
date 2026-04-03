@@ -605,3 +605,7 @@ ul.experience li strong + br {
     padding-left: 20px;
 }
 
+#content-area {
+    min-height: 100px;
+}
+
