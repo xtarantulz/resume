@@ -24,16 +24,12 @@ $(document).ready(function() {
         $('#content-area').empty();
         files.forEach(file => {
             $('#content-area').append('<div class="block"></div>');
-            $(`.block`).last().load(`blocks/${lang}/${file}`, function() {
+            $(`.block`).load(`blocks/${lang}/${file}`, function() {
                 // контент полностью загрузился
                 initSlider() // слайдеры обычные
                 initAccordion();  // акордеон для h2
                 initPortfolioSlider(); // портфолио слайдер
                 initTooltips(); // тултипы
-                initMagnifier(".content", {
-                    scale: 2.2,
-                    size: 160
-                });
             });
         });
     }
