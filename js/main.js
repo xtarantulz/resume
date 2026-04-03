@@ -19,7 +19,7 @@ $(document).ready(function() {
     }
 
     // Функция загрузки блоков
-    function loadBlocks(lang) {
+    async function loadBlocks(lang) {
         let files = [
             'about.html',
             'skills.html',
@@ -29,30 +29,29 @@ $(document).ready(function() {
 
         const $area = $('#content-area');
 
-        // скрываем чтобы не было "мигания"
         $area.css({
             opacity: 0,
             transition: 'opacity 0.25s ease'
         });
 
-        // очищаем
         $area.empty();
 
-        // грузим все блоки параллельно
-        let requests = files.map(file => {
-            return $.get(`blocks/${lang}/${file}`).then(html => {
-                let $block = $('<div class="block"></div>');
-                $block.html(html);
-                $area.append($block);
-            });
+        // грузим ВСЕ параллельно
+        let responses = await Promise.all(
+            files.map(file => $.get(`blocks/${lang}/${file}`))
+        );
+
+        // ВАЖНО: вставляем строго по порядку
+        responses.forEach(html => {
+            let $block = $('<div class="block"></div>');
+            $block.html(html);
+            $area.append($block);
         });
 
-        $.when(...requests).done(function () {
-            initAll();
+        initAll();
 
-            requestAnimationFrame(() => {
-                $area.css('opacity', 1);
-            });
+        requestAnimationFrame(() => {
+            $area.css('opacity', 1);
         });
     }
 
