@@ -36,17 +36,13 @@ $(document).ready(function() {
 
         $area.empty();
 
-        // грузим ВСЕ параллельно
-        let responses = await Promise.all(
-            files.map(file => $.get(`blocks/${lang}/${file}`))
-        );
+        for (let file of files) {
+            let html = await $.get(`blocks/${lang}/${file}`);
 
-        // ВАЖНО: вставляем строго по порядку
-        responses.forEach(html => {
             let $block = $('<div class="block"></div>');
             $block.html(html);
             $area.append($block);
-        });
+        }
 
         initAll();
 
