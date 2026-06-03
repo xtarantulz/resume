@@ -21,6 +21,7 @@ $(document).ready(function() {
     // Функция загрузки блоков
     async function loadBlocks(lang) {
         let files = [
+            'download.html',
             'about.html',
             'skills.html',
             'experience.html',

@@ -11,13 +11,13 @@ body {
 /* Анимация плавного перелива градиента */
 @keyframes matrixGradient {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
     50% {
         background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
 }
 
@@ -209,7 +209,6 @@ ul.experience li strong + br {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Інформація про резюме */
 .header-info {
     flex: 1;
 }
@@ -223,7 +222,6 @@ ul.experience li strong + br {
     line-height: 1.4;
 }
 
-/* Про мене */
 .about-me-container {
     margin-top: 20px;
 }
@@ -233,7 +231,6 @@ ul.experience li strong + br {
     line-height: 1.5;
 }
 
-/* Добавляем стрелку справа от заголовка */
 .block h2 {
     position: relative;
     cursor: pointer;
@@ -245,9 +242,8 @@ ul.experience li strong + br {
     transition: background 0.3s;
 }
 
-/* Стрелка с помощью ::after */
 .block h2::after {
-    content: "▼"; /* стрелка вниз */
+    content: "▼";
     position: absolute;
     right: 15px;
     top: 50%;
@@ -256,9 +252,8 @@ ul.experience li strong + br {
     font-size: 14px;
 }
 
-/* Когда блок раскрыт, стрелка поворачивается вверх */
 .block .content {
-    display: none; /* по умолчанию закрыто */
+    display: none;
 }
 
 .block .content strong {
@@ -267,7 +262,7 @@ ul.experience li strong + br {
 
 .block .content.show + h2::after,
 .block h2.active::after {
-    transform: translateY(-50%) rotate(180deg); /* стрелка вверх */
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .block h2:hover {
@@ -281,27 +276,27 @@ ul.experience li strong + br {
     border-left: 2px solid rgba(255, 255, 255, 0.1);
     border-right: 2px solid rgba(255, 255, 255, 0.1);
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05); /* почти прозрачный белый */
+    background: rgba(255, 255, 255, 0.05);
     margin-bottom: 15px;
-    color: #fff; /* текст лучше читается на темном фоне */
-    backdrop-filter: blur(5px); /* эффект стекла */
-    border-radius: 8px; /* скругление, чтобы выглядело аккуратно */
+    color: #fff;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
 }
 
 .resume-header {
     text-align: center;
-    padding: 20px 15px;
+    padding: 20px 15px 5px 15px;
     margin-bottom: 30px;
-    background: rgba(0, 123, 255, 0.2); /* прозрачный синий фон */
+    background: rgba(0, 123, 255, 0.2);
     color: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* тень чуть ярче для контраста */
-    backdrop-filter: blur(10px); /* размытие фона под шапкой для эффекта стекла */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .resume-header h1 {
     font-size: 32px;
-    margin: 0 0 10px 0;
+    margin: 0;
     font-weight: 700;
 }
 
@@ -309,7 +304,7 @@ ul.experience li strong + br {
     font-size: 14px;
     line-height: 1.5;
     border-top: 2px solid white;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .resume-header .contact a {
@@ -333,15 +328,10 @@ ul.experience li strong + br {
 }
 
 
-/* Контейнер для табів */
 .tabs-container {
-    margin: 30px 0;
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 25px;
 }
 
-/* Сами таби */
 .tabs {
     display: flex;
     justify-content: center;
@@ -356,6 +346,7 @@ ul.experience li strong + br {
     font-weight: 600;
     color: black;
     transition: all 0.3s;
+    width: 100px;
 }
 
 .tab:hover {
@@ -374,11 +365,11 @@ ul.experience li strong + br {
     text-align: center;
     padding: 15px 20px;
     margin-top: 30px;
-    background: rgba(0, 123, 255, 0.15); /* прозрачный синий фон */
+    background: rgba(0, 123, 255, 0.15);
     color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px); /* эффект стекла */
+    backdrop-filter: blur(8px);
     font-size: 14px;
 }
 
@@ -387,7 +378,6 @@ ul.experience li strong + br {
 }
 
 
-/* Контейнер слайдера проектов */
 .portfolio-slider-wrapper {
     position: relative;
     overflow: hidden;
@@ -395,7 +385,6 @@ ul.experience li strong + br {
     box-sizing: border-box;
 }
 
-/* Список проектов */
 .portfolio-list {
     display: flex;
     transition: transform 0.5s ease;
@@ -403,7 +392,6 @@ ul.experience li strong + br {
     gap: 0;
 }
 
-/* Каждый проект как слайд */
 .portfolio-item-new {
     flex: 0 0 100%;
     box-sizing: border-box;
@@ -411,7 +399,6 @@ ul.experience li strong + br {
     gap: 30px;
 }
 
-/* Слайдер картинок внутри проекта */
 .portfolio-list .slider {
     width: 100%;
     max-width: 420px;
@@ -437,7 +424,6 @@ ul.experience li strong + br {
     display: block;
 }
 
-/* Информация о проекте */
 .portfolio-info {
     max-width: 450px;
 }
@@ -467,7 +453,6 @@ ul.experience li strong + br {
     background: #023a80;
 }
 
-/* Стиль кнопок для портфолио */
 .portfolio-prev,
 .portfolio-next {
     position: absolute;
@@ -543,13 +528,12 @@ ul.experience li strong + br {
 }
 
 
-/* ===== Справка про невідображені проєкти ===== */
 .portfolio-note {
-    background-color: #f9f9f9; /* світло-сірий фон */
-    border-left: 4px solid #0073e6; /* синя лінія зліва */
-    padding: 16px 20px; /* внутрішні відступи */
-    margin-bottom: 30px; /* відступ знизу до проектів */
-    border-radius: 6px; /* закруглені кути */
+    background-color: #f9f9f9;
+    border-left: 4px solid #0073e6;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
     font-family: 'Inter', sans-serif;
 }
 
@@ -576,10 +560,9 @@ ul.experience li strong + br {
     margin-bottom: 6px;
 }
 
-/* ===== Справка про невідображені проєкти ===== */
 .portfolio-note {
-    background-color: #f4f1ee; /* теплий світло-бежевий фон */
-    border-left: 4px solid #c66d1e; /* коричнево-помаранчева лінія зліва */
+    background-color: #f4f1ee;
+    border-left: 4px solid #c66d1e;
     padding: 16px 20px;
     margin-bottom: 30px;
     border-radius: 6px;
@@ -588,7 +571,7 @@ ul.experience li strong + br {
 
 .portfolio-note h3 {
     margin-top: 0;
-    color: #c66d1e; /* колір заголовку під колір лінії */
+    color: #c66d1e;
     font-size: 20px;
 }
 
@@ -606,10 +589,10 @@ ul.experience li strong + br {
     font-size: 14px;
 }
 
-/* ===== Справка про показані проєкти (скріншоти) ===== */
+
 .portfolio-note-visible {
-    background-color: #e6f0fa; /* більш м’який світло-блакитний фон */
-    border-left: 4px solid #1a73e8; /* синя лінія зліва */
+    background-color: #e6f0fa;
+    border-left: 4px solid #1a73e8;
     padding: 16px 20px;
     margin-bottom: 30px;
     border-radius: 6px;
@@ -763,4 +746,28 @@ ul.experience li strong + br {
 
 .tab:not(.active):hover::before {
     opacity: 1;
+}
+
+
+.download-section {
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.download-btn.pdf {
+    background: #e53935;
+    color: #fff;
+}
+
+.download-btn.docx {
+    background: #1565c0;
+    color: #fff;
 }
