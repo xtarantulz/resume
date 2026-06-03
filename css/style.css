@@ -467,7 +467,6 @@ ul.experience li strong + br {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: transparent;
     color: #ff7b02;
     border: 2px solid #ff7b02;
     padding: 10px 16px;
@@ -477,11 +476,12 @@ ul.experience li strong + br {
     z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     font-size: 18px;
+    background-color: #1a1a1a;
 }
 
 .portfolio-prev:hover,
 .portfolio-next:hover {
-    background: #1a1a1a;
+    background-color: transparent;
     color: #ff7b02;
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
