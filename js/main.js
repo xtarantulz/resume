@@ -2,12 +2,12 @@ $(document).ready(function() {
     initSlider();
 
     function initTooltips() {
-        document.querySelectorAll('.skills span[title]').forEach(el => {
+        document.querySelectorAll('.download-buttons a[title], .skills span[title]').forEach(el => {
             el.dataset.tooltip = el.getAttribute('title');
             el.removeAttribute('title');
         });
 
-        tippy('.skills span', {
+        tippy('.download-buttons a, .skills span', {
             content(reference) {
                 return reference.dataset.tooltip;
             },
