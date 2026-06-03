@@ -468,7 +468,7 @@ ul.experience li strong + br {
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
-    color: white;
+    color: #ff7b02;
     border: 2px solid #ff7b02;
     padding: 10px 16px;
     border-radius: 50%;
