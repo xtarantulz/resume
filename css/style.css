@@ -158,8 +158,8 @@ ul.experience li strong + br {
 /* Слайдер */
 .slider {
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    height: 225px;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -242,7 +242,7 @@ ul.experience li strong + br {
     transition: background 0.3s;
 }
 
-.block h2.active{
+.block h2.active {
     margin: 0;
     border-radius: 6px 6px 0 0;
 }
@@ -736,13 +736,12 @@ ul.experience li strong + br {
     width: 80px;
     height: 5px;
 
-    background:
-            radial-gradient(
-                    circle,
-                    rgba(255,255,255,1) 0%,
-                    rgba(255,255,255,.8) 35%,
-                    rgba(255,255,255,0) 100%
-            );
+    background: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, .8) 35%,
+            rgba(255, 255, 255, 0) 100%
+    );
 
     filter: blur(1px);
     z-index: 10;
@@ -779,4 +778,16 @@ ul.experience li strong + br {
 .btn.docx {
     background: #1565c0;
     color: #fff;
+}
+
+.location {
+    margin-top: 5px;
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+}
+
+#scrambleCanvas{
+    padding-left: 15px;
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
