@@ -791,3 +791,18 @@ ul.experience li strong + br {
     margin-top: -10px;
     margin-bottom: -10px;
 }
+
+ul.experience .job-block b{
+    color: #44ff44;
+    font-weight: normal;
+    font-size: 16px
+}
+
+ul.experience .job-block b a{
+    color: #44ff44;
+    text-decoration: underline;
+}
+
+ul.experience .job-block b a:hover{
+    text-decoration: none;
+}
