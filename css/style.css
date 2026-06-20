@@ -130,6 +130,7 @@ ul.experience li ol {
 ul.experience li ul li,
 ul.experience li ol li {
     margin-bottom: 5px;
+    clear: both;
 }
 
 ul.experience li a {
@@ -805,4 +806,11 @@ ul.experience .job-block b a{
 
 ul.experience .job-block b a:hover{
     text-decoration: none;
+}
+
+.portfolio-btn-row a{
+    color: white !important;
+    text-decoration: none !important;
+    float: right;
+    margin-bottom: 20px;
 }
