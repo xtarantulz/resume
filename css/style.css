@@ -783,6 +783,11 @@ ul.experience .job-block b a:hover{
     margin-bottom: 20px;
 }
 
+.resume-footer p{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
 @property --a {
     syntax: '<angle>';
     initial-value: 0deg;
