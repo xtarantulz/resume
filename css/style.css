@@ -656,44 +656,6 @@ ul.experience li strong + br {
     min-height: 100px;
 }
 
-.slider {
-    position: relative;
-    overflow: hidden;
-}
-
-.slider::before {
-    content: '';
-
-    position: absolute;
-
-    width: 80px;
-    height: 5px;
-
-    background: radial-gradient(
-            circle,
-            rgba(255, 123, 2, 1) 0%,
-            rgba(255, 123, 2, .75) 35%,
-            rgba(255, 123, 2, 0) 100%
-    );
-
-    filter: blur(1px);
-
-    z-index: 999;
-    pointer-events: none;
-
-    offset-path: inset(0 round 0px);
-    offset-distance: 0;
-
-    animation: runBorder 5s linear infinite;
-}
-
-@keyframes runBorder {
-    to {
-        offset-distance: 100%;
-    }
-}
-
-
 .btn {
     transition: all 0.3s;
     position: relative;
@@ -717,8 +679,14 @@ ul.experience li strong + br {
     pointer-events: none;
     offset-path: inset(0 round 6px);
     offset-distance: 0;
-    animation: runBorder 2s linear infinite;
+    animation: runBorderButton 2s linear infinite;
     opacity: 0;
+}
+
+@keyframes runBorderButton {
+    to {
+        offset-distance: 100%;
+    }
 }
 
 .btn:hover::before {
@@ -750,7 +718,7 @@ ul.experience li strong + br {
     offset-path: inset(0 round 8px);
     offset-distance: 0;
     opacity: 0;
-    animation: runBorder 2s linear infinite;
+    animation: runBorderButton 2s linear infinite;
 }
 
 .tab:not(.active):hover::before {
@@ -813,4 +781,32 @@ ul.experience .job-block b a:hover{
     text-decoration: none !important;
     float: right;
     margin-bottom: 20px;
+}
+
+@property --a {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.header-top .slider {
+    box-sizing: border-box;
+    border: solid 5px transparent;
+    border-radius: 10px;
+    background:
+            repeating-conic-gradient(
+                    from var(--a),
+                    transparent 0% 50%,
+                    rgba(255, 123, 2, 0.5) 85%,
+                    transparent 100%
+            ) border-box;
+
+    filter: drop-shadow(0 0 15px rgba(0, 0, 255, 0.6));
+    animation: rotateBorder 3.5s linear infinite;
+}
+
+@keyframes rotateBorder {
+    to {
+        --a: 1turn;
+    }
 }
