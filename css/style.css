@@ -1,23 +1,37 @@
+/* Реєструємо кольори як змінні для анімації */
+@property --color1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #041429;
+}
+@property --color2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #000c00;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #041429, #000c00, #041429, #002200);
-    background-size: 400% 400%;
     color: #fff;
-    animation: matrixGradient 15s ease infinite;
+
+    /* Градієнт використовує змінні */
+    background: linear-gradient(180deg, var(--color1), var(--color2), #002200, var(--color1));
+    background-size: 100% 100%; /* Код не рухається і не дублюється! */
+
+    animation: breatheGradient 8s ease infinite alternate;
 }
 
-/* Анимация плавного перелива градиента */
-@keyframes matrixGradient {
+/* Кольори плавно перетікають один в один на місці */
+@keyframes breatheGradient {
     0% {
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
+        --color1: #041429;
+        --color2: #000c00;
     }
     100% {
-        background-position: 0 50%;
+        --color1: #002200;
+        --color2: #041429;
     }
 }
 
