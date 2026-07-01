@@ -391,7 +391,6 @@ ul.experience li strong + br {
     margin-top: 30px;
     background: rgba(0, 123, 255, 0.15);
     color: #fff;
-    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
     font-size: 14px;
@@ -828,4 +827,8 @@ ul.experience .job-block b a:hover{
     to {
         --a: 1turn;
     }
+}
+
+.container {
+    border: 1px solid rgba(255, 255, 255, 0.07);
 }
