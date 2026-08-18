@@ -537,10 +537,22 @@ span.project-link {
     }
 
     /* Если у тебя шапка сделана через flex/grid, заставляем элементы выстроиться в колонку */
-    .header, .header *,
+    .header,
     .top-section {
         flex-direction: column !important;
         text-align: center;
+    }
+
+    .header *{
+        text-align: center;
+    }
+
+    .contacts-bar{
+        display: block;
+    }
+
+    .location{
+        display: block;
     }
 
     /* Превращаем двухколоночные секции в одну колонку */
