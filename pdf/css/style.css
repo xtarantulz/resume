@@ -571,3 +571,7 @@ span.project-link {
         max-width: 150px;
     }
 }
+.job-responsibilities ul {
+    list-style: disc; /* Возвращает стандартные точки */
+    padding-left: 20px; /* Добавляет отступ слева, чтобы точки не прижимались к краю */
+}
