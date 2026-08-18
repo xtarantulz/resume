@@ -79,7 +79,7 @@ body {
 
 .contact-link i,
 .location i {
-    color: #3b82f6;
+    color: #ff7b02;
 }
 
 .location {
@@ -102,7 +102,7 @@ body {
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #3b82f6;
+    border: 3px solid #ff7b02;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
@@ -133,7 +133,7 @@ body {
     color: #1e3a8a;
     letter-spacing: 0.5px;
     padding-bottom: 4px;
-    border-bottom: 2px solid #2563eb;
+    border-bottom: 2px solid #ff7b02;
     margin-bottom: 12px;
     text-transform: uppercase;
 }
@@ -257,12 +257,15 @@ body {
 }
 
 .project-link {
-    color: #3b82f6;
+    color: #ff7b02;
     text-decoration: none;
 }
 
-.project-link:hover {
+a.project-link:hover {
     text-decoration: underline;
+}
+span.project-link {
+    color: #b35601; /* Более темный и тусклый аналог #ff7b02 */
 }
 
 .project-desc {
@@ -433,7 +436,7 @@ body {
 }
 
 .rating-dots .dot.active {
-    background-color: #3b82f6;
+    background-color: #ff7b02;
 }
 
 /* --- 10. ФУТЕР --- */
