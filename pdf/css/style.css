@@ -268,6 +268,15 @@ span.project-link {
     color: #b35601; /* Более темный и тусклый аналог #ff7b02 */
 }
 
+@media print {
+    .project-link,
+    a.project-link,
+    span.project-link {
+        color: inherit !important; /* Наследует цвет обычного текста */
+        text-decoration: none !important;
+    }
+}
+
 .project-desc {
     font-size: 12px;
     color: #4b5563;
@@ -498,29 +507,6 @@ span.project-link {
         box-shadow: none !important;
     }
 
-    .section-title {
-        color: #1e3a8a !important;
-        border-bottom-color: #2563eb !important;
-    }
-
-    .title,
-    .company-name,
-    .education-school,
-    .skill-group-title {
-        color: #2563eb !important;
-    }
-
-    .rating-dots .dot.active {
-        background-color: #2563eb !important;
-    }
-
-    .tag,
-    .hobby-tag {
-        background-color: #e2e8f0 !important;
-        color: #0f172a !important;
-        border: 1px solid #cbd5e1 !important;
-    }
-
     a,
     a:visited {
         text-decoration: none !important;
@@ -529,15 +515,6 @@ span.project-link {
 
     a[href]::after {
         content: "" !important;
-    }
-
-    /* Не разрывать карточки и заголовок пополам */
-    .job-item,
-    .project-item,
-    .portfolio-item,
-    .section-title {
-        break-inside: avoid !important;
-        page-break-inside: avoid !important;
     }
 
     /* РАЗРЫВ СТРАНИЦЫ: срабатывает ТОЛЬКО там, где в HTML добавлен класс .page-break */
