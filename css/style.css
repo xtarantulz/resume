@@ -190,6 +190,7 @@ ul.experience li strong + br {
     left: 0;
     display: none;
     object-fit: cover;
+    object-position: top;
 }
 
 .slider img.active {
