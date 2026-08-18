@@ -530,3 +530,32 @@ span.project-link {
         padding-top: 10px !important;
     }
 }
+
+@media screen and (max-width: 780px) {
+    .resume-container {
+        padding: 15px 10px; /* Уменьшаем внутренние отступы контейнера */
+    }
+
+    /* Если у тебя шапка сделана через flex/grid, заставляем элементы выстроиться в колонку */
+    .header, .header *,
+    .top-section {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    /* Превращаем двухколоночные секции в одну колонку */
+    .about-grid,
+    .section-row,
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Картинку в шапке на мобилке можно сделать чуть компактнее и по центру */
+    .resume-container img,
+    .header img {
+        margin: 0 auto;
+        max-width: 150px;
+    }
+}
