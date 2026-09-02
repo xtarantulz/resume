@@ -25,7 +25,7 @@ $(document).ready(function() {
             'about.html',
             'skills.html',
             'experience.html',
-            //'portfolio.html'
+            'portfolio.html'
         ];
 
         const $area = $('#content-area');
@@ -41,6 +41,12 @@ $(document).ready(function() {
             let html = await $.get(`blocks/${lang}/${file}`);
 
             let $block = $('<div class="block"></div>');
+
+            // Якщо це портфоліо — робимо його невидимим, але контент усередині є
+            if (file === 'portfolio.html') {
+                $block.hide(); // або $block.css('display', 'none');
+            }
+
             $block.html(html);
             $area.append($block);
         }
@@ -55,7 +61,7 @@ $(document).ready(function() {
     function initAll() {
         initSlider();
         initAccordion();
-        //initPortfolioSlider();
+        initPortfolioSlider();
         initTooltips();
     }
 
