@@ -833,3 +833,28 @@ ul.experience .job-block b a:hover{
 .container {
     border: 1px solid rgba(255, 255, 255, 0.07);
 }
+
+/* --- ВІДСТУП ДЛЯ БЛОКУ КНОПКИ --- */
+.portfolio-version {
+    margin-top: 12px; /* Додає гарний повітряний відступ зверху */
+    display: flex;
+    justify-content: center; /* Центруємо кнопку, або прибери, якщо хочеш по лівому краю */
+}
+
+/* --- ОСОБЛИВА КНОПКА ПОРТФОЛІО (ПОМАРАНЧЕВИЙ АКЦЕНТ) --- */
+.btn-portfolio-special {
+    background: #ff7b02 !important; /* Твій фірмовий колір */
+    color: #ffffff !important;
+    font-weight: 700;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-portfolio-special:hover {
+    background: #e06d00 !important; /* Темніший відтінок при наведенні */
+}
+
+.btn-portfolio-special i {
+    margin-right: 6px;
+}
+

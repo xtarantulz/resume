@@ -25,7 +25,7 @@ $(document).ready(function() {
             'about.html',
             'skills.html',
             'experience.html',
-            'portfolio.html'
+            //'portfolio.html'
         ];
 
         const $area = $('#content-area');
@@ -55,7 +55,7 @@ $(document).ready(function() {
     function initAll() {
         initSlider();
         initAccordion();
-        initPortfolioSlider();
+        //initPortfolioSlider();
         initTooltips();
     }
 
