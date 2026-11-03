@@ -66,26 +66,74 @@ body {
     color: #ff7b02;
 }
 
+/* Контактная информация */
+
 .contacts-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 16px;
-    font-size: 14px;
-    margin-bottom: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 10px;
+    margin: 16px 0 12px;
+    font-size: 13px;
 }
 
 .contact-link {
-    color: #4b5563;
-    text-decoration: none;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 6px;
-    transition: color 0.2s ease;
+    gap: 7px;
+    min-width: 0;
+    color: #334155;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.contact-link i {
+    width: 16px;
+    flex-shrink: 0;
+    color: #f97316;
+    text-align: center;
+}
+
+.contact-link strong {
+    flex-shrink: 0;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.contact-link span {
+    overflow-wrap: anywhere;
 }
 
 .contact-link:hover {
-    color: #3b82f6;
+    color: #2563eb;
     text-decoration: underline;
+}
+
+/* Мобильная версия */
+
+@media screen and (max-width: 780px) {
+    .contacts-bar {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .contact-link {
+        white-space: normal;
+    }
+}
+
+/* Печать и PDF */
+
+@media print {
+    .contacts-bar {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .contact-link {
+        color: #1e293b !important;
+    }
 }
 
 .contact-link i,
@@ -119,23 +167,9 @@ body {
     image-rendering: crisp-edges;
 }
 
-/* --- 3. МАКЕТ СЕТКИ (КОЛОНКИ) --- */
-.main-content {
-    display: flex;
-    gap: 30px;
-}
-
-.left-column {
-    flex: 1.8;
-}
-
-.right-column {
-    flex: 1;
-}
-
 /* --- 4. ОБЩИЕ СЕКЦИИ И ЗАГОЛОВКИ --- */
 .section {
-    margin-bottom: 22px;
+    margin-bottom: 30px;
 }
 
 .section-title {
@@ -408,55 +442,75 @@ span.project-link {
     color: #64748b;
 }
 
-/* --- 9. ЯЗЫКИ --- */
+/* --- 9. МОВИ --- */
 .languages-list {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    list-style: none;
-}
-
-.languages-list li {
-    margin-bottom: 4px;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    margin-top: 12px;
 }
 
 .language-item {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.language-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
+    align-items: center; /* Центрируем бейдж строго по оси названия языка */
+    gap: 12px;
 }
 
 .language-name {
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
     color: #1e293b;
 }
 
-.language-level {
-    font-size: 11.5px;
-    color: #64748b;
+/* Базовый стиль бейджа */
+.language-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Расстояние между точкой и текстом внутри бейджа */
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid transparent;
 }
 
-.rating-dots {
-    display: flex;
-    gap: 5px;
-}
-
-.rating-dots .dot {
-    width: 8px;
-    height: 8px;
+/* Точка-маркер внутри бейджа */
+.language-badge::before {
+    content: "";
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background-color: #cbd5e1;
+    display: inline-block;
 }
 
-.rating-dots .dot.active {
-    background-color: #ff7b02;
+/* 1. Родной язык — Спокойный зеленый */
+.language-badge.native {
+    background-color: #f0fdf4;
+    color: #166534;
+    border-color: #dcfce7;
+}
+.language-badge.native::before {
+    background-color: #22c55e;
+}
+
+/* 2. Иностранный рабочий язык — Контрастный синий (акцент на B1) */
+.language-badge.intermediate {
+    background-color: #f0f9ff;
+    color: #0369a1;
+    border-color: #e0f2fe;
+}
+.language-badge.intermediate::before {
+    background-color: #0ea5e9;
+}
+
+/* 3. Свободный — Приглушенный зеленый или нейтральный */
+.language-badge.fluent {
+    background-color: #f8fafc;
+    color: #475569;
+    border-color: #e2e8f0;
+}
+.language-badge.fluent::before {
+    background-color: #94a3b8;
 }
 
 /* --- 10. ФУТЕР --- */
@@ -585,83 +639,8 @@ span.project-link {
     padding-left: 20px; /* Добавляет отступ слева, чтобы точки не прижимались к краю */
 }
 
-/* --- ВЕРХНИЙ ИНФОРМАЦИОННЫЙ БЛОК --- */
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.top-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    background: transparent;
-    border: none;
-}
-
-.top-info-column {
-    min-width: 0;
-}
-
-.top-info-column .section {
-    margin-bottom: 33px;
-}
-
-.top-info-column .section:last-child {
-    margin-bottom: 0;
-}
-
-/* Заголовки разделов */
-.section-title::before {
-    content: "";
-    display: inline-block;
-    width: 5px;
-    height: 15px;
-    margin-right: 9px;
-    background: #f97316;
-    border-radius: 2px;
-    vertical-align: -2px;
-}
-
-/* Разделитель колонок */
-
-.top-info-column:first-child {
-    padding-right: 25px;
-}
-
-/* Портфолио */
-
-.top-info .portfolio-link {
-    color: #1d4ed8;
-}
-
-.top-info .portfolio-title {
-    color: #1e293b;
-}
-
-/* Образование */
-
-.top-info .education-degree {
-    color: #1e293b;
-}
-
-.top-info .education-school {
-    color: #1d4ed8;
-}
-
-/* Мобильная версия */
-
-@media screen and (max-width: 780px) {
-    .top-info {
-        grid-template-columns: 1fr;
-        gap: 22px;
-    }
-
-    .top-info-column:first-child {
-        padding-right: 0;
-        border-right: none;
-        padding-bottom: 20px;
-    }
+.tag-old {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fecaca;
 }
