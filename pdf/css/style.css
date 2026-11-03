@@ -584,3 +584,84 @@ span.project-link {
     list-style: disc; /* Возвращает стандартные точки */
     padding-left: 20px; /* Добавляет отступ слева, чтобы точки не прижимались к краю */
 }
+
+/* --- ВЕРХНИЙ ИНФОРМАЦИОННЫЙ БЛОК --- */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.top-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: transparent;
+    border: none;
+}
+
+.top-info-column {
+    min-width: 0;
+}
+
+.top-info-column .section {
+    margin-bottom: 33px;
+}
+
+.top-info-column .section:last-child {
+    margin-bottom: 0;
+}
+
+/* Заголовки разделов */
+.section-title::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 15px;
+    margin-right: 9px;
+    background: #f97316;
+    border-radius: 2px;
+    vertical-align: -2px;
+}
+
+/* Разделитель колонок */
+
+.top-info-column:first-child {
+    padding-right: 25px;
+}
+
+/* Портфолио */
+
+.top-info .portfolio-link {
+    color: #1d4ed8;
+}
+
+.top-info .portfolio-title {
+    color: #1e293b;
+}
+
+/* Образование */
+
+.top-info .education-degree {
+    color: #1e293b;
+}
+
+.top-info .education-school {
+    color: #1d4ed8;
+}
+
+/* Мобильная версия */
+
+@media screen and (max-width: 780px) {
+    .top-info {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .top-info-column:first-child {
+        padding-right: 0;
+        border-right: none;
+        padding-bottom: 20px;
+    }
+}
