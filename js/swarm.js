@@ -20,22 +20,28 @@
     // ---------------------------------------------------------------- constants
 
     const NAMES = [
-        "Ada", "Linus", "Grace", "Alan", "Margaret", "Ken", "Barbara", "Dennis",
-        "Radia", "Guido", "Frances", "Bjarne", "Hedy", "Tim", "Katherine", "Edsger",
-        "Joan", "Donald", "Sophie", "Niklaus", "Anita", "Brian", "Mary", "Rob",
-        "Ida", "Yukihiro", "Shafi", "Leslie", "Jean", "Vint", "Lynn", "Bram",
+        "Ada Lovelace", "Alan Turing", "Grace Hopper", "Linus Torvalds",
+        "Dennis Ritchie", "Margaret Hamilton", "Tim Berners-Lee", "Donald Knuth",
+        "Barbara Liskov", "Ken Thompson", "Guido van Rossum", "Bjarne Stroustrup",
+        "Brendan Eich", "James Gosling", "John Carmack", "Steve Wozniak",
+        "Radia Perlman", "Hedy Lamarr", "Edsger Dijkstra", "Niklaus Wirth",
+        "Brian Kernighan", "Anders Hejlsberg", "Rob Pike", "Yukihiro Matsumoto",
+        "Linus Sebastian", "Sophie Wilson", "Vint Cerf", "Joan Clarke",
+        "Katherine Johnson", "Mary Jackson", "Anita Borg", "Frances Allen",
     ];
+
     const COLORS = [
-        "#F24E1E", "#A259FF", "#1ABCFE", "#0ACF83", "#FF7262", "#FFC700",
-        "#9747FF", "#E8467C", "#14AE5C", "#0D99FF", "#FF8A00", "#00B5CE",
+        "#F24E1E", "#A259FF", "#1ABCFE", "#0ACF83",
+        "#FF7262", "#FFC700", "#9747FF", "#E8467C",
+        "#14AE5C", "#0D99FF", "#FF8A00", "#00B5CE",
     ];
     const BLUE = "#0D99FF";
     const RED = "#F24822";
     const RULER = 20;
-    const MIN_AGENTS = 8;
-    const MAX_AGENTS = 48;
-    const FLOCK_AGENTS = 36;
-    const INTRO_AGENTS = 18;
+    const MIN_AGENTS = 5;
+    const MAX_AGENTS = 5;
+    const FLOCK_AGENTS = 5;
+    const INTRO_AGENTS = 5;
     const MAX_ITEMS = 4000;
     const MAX_WORLD_H = 40000;
     const SVGNS = "http://www.w3.org/2000/svg";
@@ -3736,7 +3742,9 @@
 
                     $('html, body').animate({
                         scrollTop: 0
-                    }, 1500);
+                    }, 1500, function(){
+                        startScrambleEffect();
+                    });
                 }
             }, 1500);
         }
