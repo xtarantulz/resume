@@ -857,3 +857,12 @@ ul.experience .job-block b a:hover{
 .btn-portfolio-special i {
     margin-right: 6px;
 }
+
+#shootCanvas {
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+}
+
+#shootCanvas.visible {
+    opacity: 1;
+}
