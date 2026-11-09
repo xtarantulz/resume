@@ -3572,6 +3572,13 @@ function startSwarm() {
             }
 
             bind() {
+                const speedUp = () => {
+                    if (this.complete) return;
+
+                    this.speedIx = this.speeds.length - 1;
+                    this.engine.speed = this.speeds[this.speedIx];
+                };
+
                 const on = (t, ev, fn, o) => {
                     t.addEventListener(ev, fn, o);
                     (this.unbinds || (this.unbinds = [])).push(() => t.removeEventListener(ev, fn, o));
@@ -3590,24 +3597,9 @@ function startSwarm() {
                 on(document.documentElement, "pointerleave", () => {
                     this.engine.mouse = null;
                 });
-                on(window, "keydown", (e) => {
-                    if (e.key === "Escape") {
-                        e.stopPropagation();
-                        stop(false);
-                    } else if ((e.key === "m" || e.key === "M") && !e.metaKey && !e.ctrlKey && !e.altKey) {
-                        this.sfx.setOn(!this.sfx.on);
-                        this.renderSoundBtn();
-                    }
-                    this.unlockSound();
-                }, true);
-                // browsers only let audio start after a click/keypress on the page
-                on(window, "pointerdown", () => this.unlockSound(), true);
-                if (!this.env.isRoot) {
-                    on(this.view.host, "wheel", (e) => {
-                        e.preventDefault();
-                        this.env.scroller.scrollBy({ top: e.deltaY, left: e.deltaX, behavior: "instant" });
-                    }, { passive: false });
-                }
+
+                on(window, "keydown", speedUp, true);
+                on(window, "pointerdown", speedUp, true);
                 on(this.view.hud, "click", (e) => {
                     const b = e.target.closest("button");
                     if (!b) return;
