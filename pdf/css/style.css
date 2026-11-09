@@ -143,11 +143,10 @@ body {
 /* Контакты */
 
 .contacts-bar {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px 20px;
-    margin: 14px 0;
-    font-size: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    width: 100%;
 }
 
 .contact-link {
@@ -232,7 +231,6 @@ body {
 }
 
 /* Мобильная версия */
-
 @media screen and (max-width: 780px) {
     .header {
         flex-direction: column-reverse;
@@ -249,11 +247,29 @@ body {
     }
 
     .contacts-bar {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .contact-link {
+        flex: 0 0 auto;
     }
 
     .header-extra {
         justify-content: center;
+    }
+
+    .header-extra {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .contact-link strong {
+        display: none;
     }
 }
 
@@ -697,14 +713,6 @@ span.project-link {
     .top-section {
         flex-direction: column !important;
         text-align: center;
-    }
-
-    .header *{
-        text-align: center;
-    }
-
-    .contacts-bar{
-        display: block;
     }
 
     .location{
