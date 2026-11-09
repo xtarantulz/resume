@@ -75,4 +75,7 @@ $(document).ready(function() {
         let lang = $(this).data('lang');
         loadBlocks(lang);
     });
+
+    startShootEffect();
+    startScrambleEffect();
 });
