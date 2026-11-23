@@ -26,31 +26,18 @@ body {
 }
 
 /* --- 2. ХЕДЕР И КОНТАКТЫ --- */
-
 .header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 25px;
-    padding-bottom: 22px;
     margin-bottom: 25px;
-    border-bottom: 2px solid #e5e7eb;
 }
 
 .header-info {
     flex: 1;
     min-width: 0;
 }
-
-.name {
-    margin: 0 0 6px;
-    font-size: 28px;
-    font-weight: 800;
-    color: #111111;
-    letter-spacing: 0.5px;
-    text-align: left;
-}
-
 .title {
     margin: 0 0 14px;
     font-size: 15px;
@@ -68,41 +55,6 @@ body {
     text-decoration: underline;
 }
 
-/* --- ХЕДЕР --- */
-
-.header {
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-    padding-bottom: 20px;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #e5e7eb;
-}
-
-.header-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.name {
-    margin: 0 0 6px;
-    font-size: 28px;
-    font-weight: 800;
-    color: #111;
-    letter-spacing: 0.5px;
-}
-
-.title {
-    margin: 0 0 14px;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.title a {
-    color: #2563eb;
-    text-decoration: none;
-}
-
 .location,
 .education-line {
     display: flex;
@@ -115,6 +67,7 @@ body {
 }
 
 .location {
+    justify-content: center;
     padding-bottom: 8px;
     border-bottom: 1px solid #e5e7eb;
 }
@@ -125,6 +78,12 @@ body {
     margin-top: 2px;
     color: #ff7b02;
     text-align: center;
+}
+
+.education-line {
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 8px;
 }
 
 .education-line > span {
@@ -138,6 +97,10 @@ body {
 
 .education-line .school {
     color: #64748b;
+}
+
+.education-line:nth-child(2) {
+    margin-left: auto;
 }
 
 /* Контакты */
@@ -178,21 +141,28 @@ body {
     color: #1e293b;
 }
 
+/* Второй элемент справа */
+.contact-link:nth-child(2) {
+    margin-left: auto;
+}
+
 .contact-link span {
     min-width: 0;
     overflow-wrap: anywhere;
 }
 
 /* Дополнительные ссылки */
-
 .header-extra {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 8px 18px;
     padding: 10px 0;
     margin-bottom: 10px;
     border-top: 1px solid #e5e7eb;
     border-bottom: 1px solid #e5e7eb;
+    margin-top: 10px;
 }
 
 .header-extra a {
@@ -215,15 +185,14 @@ body {
 }
 
 /* Фото */
-
 .photo-container {
     flex: 0 0 140px;
 }
 
 .photo {
     display: block;
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #ff7b02;
